@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "515615007374",
+    "firebase_url": "https://placementforengineers-68cad.firebaseio.com",
+    "project_id": "placementforengineers-68cad",
+    "storage_bucket": "placementforengineers-68cad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515615007374:android:6d62ad599431ffc7",
+        "android_client_info": {
+          "package_name": "com.dzone.placement_for_engineers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515615007374-afo8rc4kptugivmoli0eqo9g888ijuar.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dzone.placement_for_engineers",
+            "certificate_hash": "028a600c144bec81df38c574803787d890cbc1e2"
+          }
+        },
+        {
+          "client_id": "515615007374-o5dpk56uinhc9a2fp8h9037g297gf8q3.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "515615007374-o5dpk56uinhc9a2fp8h9037g297gf8q3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxghvSvfZJLrzSp1-O5nqWmZLZjd_2FeY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515615007374-o5dpk56uinhc9a2fp8h9037g297gf8q3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
