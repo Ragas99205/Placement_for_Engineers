@@ -2,10 +2,9 @@
 
     <!-- Base application theme. -->
     <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/l_Blue</item>
         <item name="colorPrimary">@color/l_Blue</item>
-        <item name="colorPrimaryDark">@color/l_Blue</item>
+        <item name="colorPrimaryDark">@color/d_Blue</item>
         <item name="colorAccent">#ffffff</item>
     </style>
 
@@ -13,6 +12,17 @@
         <item name="android:windowBackground">@color/l_Red</item>
         <item name="colorPrimary">@color/l_Red</item>
         <item name="colorPrimaryDark">@color/d_Red</item>
+    </style>
+
+    <style name="MainTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/l_Blue</item>
+        <item name="colorPrimaryDark">@color/l_Blue</item>
+    </style>
+
+    <!--Needed for navigation drawer-->
+    <style name="MainTheme.NoActionBar">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
     </style>
 
 </resources>

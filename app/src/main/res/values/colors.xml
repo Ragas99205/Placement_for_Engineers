@@ -4,5 +4,6 @@
     <color name="d_Blue">#0D47A1</color>
     <color name="l_Red">#E52F17</color>
     <color name="d_Red">#E52F17</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
 </resources>

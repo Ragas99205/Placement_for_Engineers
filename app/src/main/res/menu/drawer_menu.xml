@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <item android:title="Companies">
+        <menu>
+            <item
+                android:id="@+id/companies_tech"
+                android:icon="@drawable/ic_tech"
+                android:title="Tech Companies" />
+            <item
+                android:id="@+id/companies_nontech"
+                android:icon="@drawable/ic_non_tech"
+                android:title="Non-Tech Companies" />
+            <item
+                android:id="@+id/companies_core"
+                android:icon="@drawable/ic_core"
+                android:title="Core Companies" />
+        </menu>
+    </item>
+
+    <item android:title="Interview Experiences">
+        <menu>
+            <item
+                android:id="@+id/interview_exp_internship"
+                android:icon="@drawable/ic_internship"
+                android:title="Internship" />
+            <item
+                android:id="@+id/interview_exp_job"
+                android:icon="@drawable/ic_job"
+                android:title="Job" />
+        </menu>
+    </item>
+    <item android:title="Hiring Process">
+        <menu>
+            <item
+                android:id="@+id/hiring_process_tech"
+                android:icon="@drawable/ic_tech"
+                android:title="Tech Companies" />
+            <item
+                android:id="@+id/hiring_process_nontech"
+                android:icon="@drawable/ic_non_tech"
+                android:title="Non Tech Companies" />
+            <item
+                android:id="@+id/hiring_process_core"
+                android:icon="@drawable/ic_core"
+                android:title="Core Companies" />
+        </menu>
+    </item>
+    <item android:title="Placement Consultants">
+        <menu>
+            <item
+                android:id="@+id/placement_consultant_hr"
+                android:icon="@drawable/ic_hr"
+                android:title="HR Solution" />
+            <item
+                android:id="@+id/placement_consultant_rec"
+                android:icon="@drawable/ic_rec_agency"
+                android:title="Recruitment Agency" />
+            <item
+                android:id="@+id/placement_consultant_overseas"
+                android:icon="@drawable/ic_overseas"
+                android:title="Overseas Placement" />
+            <item
+                android:id="@+id/placement_consultant_edu"
+                android:icon="@drawable/ic_edu_consultancy"
+                android:title="Education Consultancy" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/share"
+        android:icon="@drawable/ic_share"
+        android:title="Share" />
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Logout" />
+
+</menu>
