@@ -10,19 +10,29 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainPageActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseAuth mAuth;
     private DrawerLayout drawer;
     FirebaseAuth.AuthStateListener mAuthListener;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseName;
     CompaniesTechFragment ctf = (CompaniesTechFragment)getSupportFragmentManager().findFragmentByTag("Companies_Tech");
 
     @Override
@@ -60,9 +70,42 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        View header = navigationView.getHeaderView(0);
 
-        TextView email = (TextView)findViewById(R.id.emailtxt);
-        email.setText("Hello");
+
+        final TextView nav_name = (TextView)header.findViewById(R.id.nav_name);
+        TextView nav_email = (TextView)header.findViewById(R.id.nav_email);
+        nav_email.setText(user.getEmail());
+        nav_name.setText(user.getDisplayName());
+
+        if((nav_name.getText().toString()).equals("")){
+            try{
+                databaseName = database.getReference("Users").child(user.getUid());
+
+                ValueEventListener eventListener = new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        String name = dataSnapshot.child("name").getValue(String.class);
+                        Log.d("TAG","Name is: " + name);
+                        nav_name.setText(name);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                };
+                databaseName.addListenerForSingleValueEvent(eventListener);
+
+            }catch(Exception e){
+                Toast.makeText(MainPageActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
+            }
+
+        }
+
+
+
+
 
 
     }
