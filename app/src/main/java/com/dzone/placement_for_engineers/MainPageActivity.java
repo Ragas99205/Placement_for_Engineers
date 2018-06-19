@@ -13,11 +13,23 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ScrollView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainPageActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    FirebaseAuth mAuth;
     private DrawerLayout drawer;
+    FirebaseAuth.AuthStateListener mAuthListener;
     CompaniesTechFragment ctf = (CompaniesTechFragment)getSupportFragmentManager().findFragmentByTag("Companies_Tech");
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +40,17 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.drawer_layout);
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if(firebaseAuth.getCurrentUser() == null){
+                    startActivity(new Intent(MainPageActivity.this,LoginActivity.class));
+                }
+            }
+        };
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -36,6 +59,10 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
         //handle navigation drawer item click
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        TextView email = (TextView)findViewById(R.id.emailtxt);
+        email.setText("Hello");
 
 
     }
@@ -100,6 +127,12 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
 
             case R.id.placement_consultant_edu:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PlacementConEduFragment()).commit();
+                findViewById(R.id.scrollview).setVisibility(View.GONE);
+                break;
+
+            case R.id.logout:
+                mAuth.signOut();
+                Toast.makeText(MainPageActivity.this,"Successfully Logged Out",Toast.LENGTH_SHORT).show();
                 findViewById(R.id.scrollview).setVisibility(View.GONE);
                 break;
         }
