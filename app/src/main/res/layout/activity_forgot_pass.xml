@@ -41,13 +41,13 @@
     <android.support.design.widget.TextInputLayout
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp">
+        android:layout_width="320dp"
+        android:layout_height="wrap_content">
 
 
         <EditText
             android:id="@+id/forgot_pass_email"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
             android:paddingBottom="15dp"

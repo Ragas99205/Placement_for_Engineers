@@ -95,7 +95,7 @@ public class SignupActivity extends AppCompatActivity {
                         .addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                Toast.makeText(SignupActivity.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignupActivity.this, "Registration Successful !", Toast.LENGTH_SHORT).show();
                                 // If sign in fails, display a message to the user. If sign in succeeds
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.
@@ -107,8 +107,8 @@ public class SignupActivity extends AppCompatActivity {
 
 
                                         FirebaseUser user = mAuth.getCurrentUser();
-                                    String nametxt = name.getText().toString().trim();
-                                    String contacttxt = contact.getText().toString().trim();
+                                        String nametxt = name.getText().toString().trim();
+                                        String contacttxt = contact.getText().toString().trim();
                                         databaseReference = database.getReference("Users").child(user.getUid());
                                         databaseReference.child("name").setValue(nametxt);
                                         databaseReference.child("contact").setValue(contacttxt);
