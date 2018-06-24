@@ -38,7 +38,7 @@ public class CompaniesNonTechFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_companies_tech, container, false);
+        View view = inflater.inflate(R.layout.fragment_companies_non_tech, container, false);
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         databaseReference = database.getReference("Companies").child("NonTech");
@@ -55,7 +55,7 @@ public class CompaniesNonTechFragment extends Fragment {
                     String url = ds.child("URL").getValue(String.class);
                     String wikiurl = ds.child("WikiURL").getValue(String.class);
 
-                    Toast.makeText(getActivity(),name,Toast.LENGTH_LONG);
+
 
                     HashMap<String, String> nontechCompany = new HashMap<>();
 
@@ -71,7 +71,7 @@ public class CompaniesNonTechFragment extends Fragment {
                 }
 
                 ListAdapter adapter = new SimpleAdapter(getActivity(), nontechCompanyList,
-                        R.layout.tech_list, new String[]{"Name", "CTC", "Type","URL","WikiURL"},
+                        R.layout.nontech_list, new String[]{"Name", "CTC", "Type","URL","WikiURL"},
                         new int[]{R.id.nontech_name,R.id.nontech_ctc, R.id.nontech_type,R.id.nontech_url,R.id.nontech_wiki});
 
                 lvw.setAdapter(adapter);

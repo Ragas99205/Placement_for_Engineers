@@ -37,7 +37,7 @@ public class CompaniesCoreFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_companies_tech, container, false);
+        View view = inflater.inflate(R.layout.fragment_companies_core, container, false);
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         databaseReference = database.getReference("Companies").child("Core");
@@ -54,7 +54,6 @@ public class CompaniesCoreFragment extends Fragment {
                     String url = ds.child("URL").getValue(String.class);
                     String wikiurl = ds.child("WikiURL").getValue(String.class);
 
-                    Toast.makeText(getActivity(),name,Toast.LENGTH_LONG);
 
                     HashMap<String, String> coreCompany = new HashMap<>();
 
@@ -68,12 +67,12 @@ public class CompaniesCoreFragment extends Fragment {
 
 
                 }
-
                 ListAdapter adapter = new SimpleAdapter(getActivity(), coreCompanyList,
-                        R.layout.core_list, new String[]{"Name", "CTC", "Preferred Stream","URL","WikiURL"},
-                        new int[]{R.id.core_name,R.id.core_ctc,R.id.core_pref_stream, R.id.core_url,R.id.tech_url,R.id.core_wiki});
+                        R.layout.core_list, new String[]{"Name", "CTC", "Prefered Stream","URL","WikiURL"},
+                        new int[]{R.id.core_name,R.id.core_ctc,R.id.core_pref_stream, R.id.core_url,R.id.core_wiki});
 
                 lvw.setAdapter(adapter);
+
             }
 
             @Override
@@ -82,6 +81,7 @@ public class CompaniesCoreFragment extends Fragment {
             }
         };
         databaseReference.addValueEventListener(eventListener);
+
 
         return view;
     }
