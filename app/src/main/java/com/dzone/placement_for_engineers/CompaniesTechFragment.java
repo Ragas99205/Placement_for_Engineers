@@ -56,8 +56,6 @@ public class CompaniesTechFragment extends Fragment {
                     String url = ds.child("URL").getValue(String.class);
                     String wikiurl = ds.child("WikiURL").getValue(String.class);
 
-                    Toast.makeText(getActivity(),name,Toast.LENGTH_LONG);
-
                     HashMap<String, String> techCompany = new HashMap<>();
 
                     techCompany.put("Name",name);
