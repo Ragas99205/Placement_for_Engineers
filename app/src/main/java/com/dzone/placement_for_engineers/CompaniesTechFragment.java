@@ -42,7 +42,7 @@ public class CompaniesTechFragment extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         databaseReference = database.getReference("Companies").child("Tech");
-        lvw = (ListView)view.findViewById(R.id.myList);
+        lvw = (ListView)view.findViewById(R.id.tech_list);
         techCompanyList = new ArrayList<>();
 
         ValueEventListener eventListener = new ValueEventListener() {

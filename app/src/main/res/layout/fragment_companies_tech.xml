@@ -5,7 +5,7 @@
 
 
     <ListView
-        android:id="@+id/myList"
+        android:id="@+id/tech_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </RelativeLayout>
