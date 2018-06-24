@@ -1,6 +1,7 @@
 package com.dzone.placement_for_engineers;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -67,7 +69,6 @@ public class CompaniesTechFragment extends Fragment {
 
                     techCompanyList.add(techCompany);
 
-
                 }
 
                 ListAdapter adapter = new SimpleAdapter(getActivity(), techCompanyList,
@@ -75,6 +76,28 @@ public class CompaniesTechFragment extends Fragment {
                         new int[]{R.id.tech_name,R.id.tech_ctc,R.id.tech_role, R.id.tech_type,R.id.tech_url,R.id.tech_wiki});
 
                 lvw.setAdapter(adapter);
+
+                final TextView t1 = (TextView)getActivity().findViewById(R.id.tech_url);
+                t1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String url = t1.getText().toString();
+                        Intent i = new Intent(Intent.ACTION_VIEW);
+                        i.setData(Uri.parse(url));
+                        startActivity(i);
+                    }
+                });
+
+                final TextView t2 = (TextView)getActivity().findViewById(R.id.tech_wiki);
+                t2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String url = t2.getText().toString();
+                        Intent i = new Intent(Intent.ACTION_VIEW);
+                        i.setData(Uri.parse(url));
+                        startActivity(i);
+                    }
+                });
             }
 
             @Override
