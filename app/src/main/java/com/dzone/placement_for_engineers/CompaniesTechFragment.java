@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -36,10 +37,13 @@ public class CompaniesTechFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_companies_tech, container, false);
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         databaseReference = database.getReference("Companies").child("Tech");
-        lvw = (ListView)getView().findViewById(R.id.mylist);
+        lvw = (ListView)view.findViewById(R.id.myList);
+        techCompanyList = new ArrayList<>();
 
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
@@ -52,6 +56,8 @@ public class CompaniesTechFragment extends Fragment {
                     String url = ds.child("URL").getValue(String.class);
                     String wikiurl = ds.child("WikiURL").getValue(String.class);
 
+                    Toast.makeText(getActivity(),name,Toast.LENGTH_LONG);
+
                     HashMap<String, String> techCompany = new HashMap<>();
 
                     techCompany.put("Name",name);
@@ -62,9 +68,12 @@ public class CompaniesTechFragment extends Fragment {
                     techCompany.put("WikiURL",wikiurl);
 
                     techCompanyList.add(techCompany);
+
+
                 }
+
                 ListAdapter adapter = new SimpleAdapter(getActivity(), techCompanyList,
-                        R.layout.tech_list, new String[]{"name", "ctc", "role","type","url","wiki"},
+                        R.layout.tech_list, new String[]{"Name", "CTC", "Role","Type","URL","WikiURL"},
                         new int[]{R.id.tech_name,R.id.tech_ctc,R.id.tech_role, R.id.tech_type,R.id.tech_url,R.id.tech_wiki});
 
                 lvw.setAdapter(adapter);
@@ -75,7 +84,8 @@ public class CompaniesTechFragment extends Fragment {
 
             }
         };
-        databaseReference.addListenerForSingleValueEvent(eventListener);
-        return inflater.inflate(R.layout.fragment_companies_tech, container, false);
+        databaseReference.addValueEventListener(eventListener);
+
+        return view;
     }
 }
