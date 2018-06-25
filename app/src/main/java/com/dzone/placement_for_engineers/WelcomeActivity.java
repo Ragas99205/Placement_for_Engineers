@@ -45,12 +45,6 @@ public class WelcomeActivity extends AppCompatActivity {
         login = (Button)findViewById(R.id.welcome_login);
         signup = (Button)findViewById(R.id.welcome_signup);
 
-        TextView t1 = (TextView)findViewById(R.id.myurl);
-        t1.setClickable(true);
-        t1.setMovementMethod(LinkMovementMethod.getInstance());
-        String text = "<a href='https://www.google.co.in/'>Google</a>";
-        t1.setText(Html.fromHtml(text));
-
         final Intent i = new Intent(this, LoginActivity.class);
         final Intent j = new Intent(this,SignupActivity.class);
 
