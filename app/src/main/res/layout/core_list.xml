@@ -1,142 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
-    android:background="@drawable/item_bg"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/core_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:layout_marginLeft="15dp"
-        android:paddingBottom="2dp"
-        android:paddingTop="6dip"
-        android:text="Name"
-        android:textColor="@color/d_Blue"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <LinearLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_margin="8dp"
+        android:elevation="4dp">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:paddingBottom="2dp"
-            android:paddingTop="6dip"
-            android:text="CTC :"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:textStyle="bold"/>
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/core_ctc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="82dp"
-            android:paddingBottom="2dp"
-            android:paddingTop="6dip"
-            android:text="ctc"
-            android:textColor="@color/gray"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textColor="@color/d_Blue"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="15dp"
+                android:textSize="22dp"
+                android:id="@+id/core_name"/>
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="27dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="CTC "
+                    android:textSize="15dp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:id="@+id/core_ctc"
+                    android:text="ctc"/>
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:paddingBottom="2dp"
-            android:paddingTop="6dip"
-            android:text="Preferred Stream :"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="27dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Preferred Role "
+                    android:textSize="15dp"/>
 
-        <TextView
-            android:id="@+id/core_pref_stream"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:paddingBottom="2dp"
-            android:paddingTop="6dip"
-            android:text="preferred stream"
-            android:textColor="@color/gray"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:id="@+id/core_pref_stream"
+                    android:text="role"/>
+            </LinearLayout>
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="27dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="URL "
+                    android:textSize="15dp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:layout_marginLeft="93dp"
+                    android:id="@+id/core_url"
+                    android:text="url"/>
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:paddingBottom="2dp"
-            android:paddingTop="6dip"
-            android:text="URL :"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="27dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="WikiURL "
+                    android:textSize="15dp"/>
 
-        <TextView
-            android:id="@+id/core_url"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:autoLink="web"
-            android:layout_marginLeft="83dp"
-            android:paddingBottom="2dp"
-            android:paddingTop="6dip"
-            android:text="url"
-            android:textColor="@color/gray"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="65dp"
+                    android:autoLink="web"
+                    android:id="@+id/core_wiki"
+                    android:text="wiki"/>
+            </LinearLayout>
 
-    </LinearLayout>
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+    </android.support.v7.widget.CardView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:paddingBottom="2dp"
-            android:paddingTop="6dip"
-            android:text="Wiki URL :"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/core_wiki"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:autoLink="web"
-            android:layout_marginLeft="57dp"
-            android:paddingBottom="2dp"
-            android:paddingTop="6dip"
-            android:text="wiki url"
-            android:textColor="@color/gray"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
 </LinearLayout>

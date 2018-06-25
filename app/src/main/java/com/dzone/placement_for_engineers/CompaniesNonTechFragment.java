@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,28 +24,31 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
 public class CompaniesNonTechFragment extends Fragment {
 
+    private RecyclerView recyclerView;
+    private nontechCompanyAdapter adapter;
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener mAuthListener;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference;
-    ArrayList<HashMap<String, String>> nontechCompanyList;
-
-    ListView lvw;
+    private List<nontechCompanyRecyclerItems> listItems;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_companies_non_tech, container, false);
+        recyclerView = (RecyclerView)view.findViewById(R.id.nontech_list_recycler);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         databaseReference = database.getReference("Companies").child("NonTech");
-        lvw = (ListView)view.findViewById(R.id.nontech_list);
-        nontechCompanyList = new ArrayList<>();
+        listItems = new ArrayList<>();
 
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
@@ -55,26 +60,10 @@ public class CompaniesNonTechFragment extends Fragment {
                     String url = ds.child("URL").getValue(String.class);
                     String wikiurl = ds.child("WikiURL").getValue(String.class);
 
-
-
-                    HashMap<String, String> nontechCompany = new HashMap<>();
-
-                    nontechCompany.put("Name",name);
-                    nontechCompany.put("CTC",ctc);
-                    nontechCompany.put("Type",type);
-                    nontechCompany.put("URL",url);
-                    nontechCompany.put("WikiURL",wikiurl);
-
-                    nontechCompanyList.add(nontechCompany);
-
-
+                    listItems.add(new nontechCompanyRecyclerItems(name,ctc,type,url,wikiurl));
                 }
-
-                ListAdapter adapter = new SimpleAdapter(getActivity(), nontechCompanyList,
-                        R.layout.nontech_list, new String[]{"Name", "CTC", "Type","URL","WikiURL"},
-                        new int[]{R.id.nontech_name,R.id.nontech_ctc, R.id.nontech_type,R.id.nontech_url,R.id.nontech_wiki});
-
-                lvw.setAdapter(adapter);
+                adapter = new nontechCompanyAdapter(listItems,getContext());
+                recyclerView.setAdapter(adapter);
             }
 
             @Override

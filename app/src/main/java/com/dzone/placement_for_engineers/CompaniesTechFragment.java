@@ -39,8 +39,6 @@ public class CompaniesTechFragment extends Fragment {
     private DatabaseReference databaseReference;
     private List<techCompanyRecyclerItems> listItems;
 
-    ListView lvw;
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

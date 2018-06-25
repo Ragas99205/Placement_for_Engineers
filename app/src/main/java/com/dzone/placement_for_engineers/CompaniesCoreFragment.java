@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,27 +24,33 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
 public class CompaniesCoreFragment extends Fragment {
 
+    private RecyclerView recyclerView;
+    private coreCompanyAdapter adapter;
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener mAuthListener;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference;
-    ArrayList<HashMap<String, String>> coreCompanyList;
+    private List<coreCompanyRecyclerItems> listItems;
 
     ListView lvw;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_companies_core, container, false);
+        recyclerView = (RecyclerView)view.findViewById(R.id.core_list_recycler);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         databaseReference = database.getReference("Companies").child("Core");
-        lvw = (ListView)view.findViewById(R.id.core_list);
-        coreCompanyList = new ArrayList<>();
+        listItems = new ArrayList<>();
 
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
@@ -54,25 +62,10 @@ public class CompaniesCoreFragment extends Fragment {
                     String url = ds.child("URL").getValue(String.class);
                     String wikiurl = ds.child("WikiURL").getValue(String.class);
 
-
-                    HashMap<String, String> coreCompany = new HashMap<>();
-
-                    coreCompany.put("Name",name);
-                    coreCompany.put("CTC",ctc);
-                    coreCompany.put("Prefered Stream",pref_stream);
-                    coreCompany.put("URL",url);
-                    coreCompany.put("WikiURL",wikiurl);
-
-                    coreCompanyList.add(coreCompany);
-
-
+                    listItems.add(new coreCompanyRecyclerItems(name,ctc,pref_stream,url,wikiurl));
                 }
-                ListAdapter adapter = new SimpleAdapter(getActivity(), coreCompanyList,
-                        R.layout.core_list, new String[]{"Name", "CTC", "Prefered Stream","URL","WikiURL"},
-                        new int[]{R.id.core_name,R.id.core_ctc,R.id.core_pref_stream, R.id.core_url,R.id.core_wiki});
-
-                lvw.setAdapter(adapter);
-
+                adapter = new coreCompanyAdapter(listItems,getContext());
+                recyclerView.setAdapter(adapter);
             }
 
             @Override
