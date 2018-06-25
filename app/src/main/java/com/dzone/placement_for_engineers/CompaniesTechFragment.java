@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,13 +27,16 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class CompaniesTechFragment extends Fragment {
+    private RecyclerView recyclerView;
+    private techCompanyAdapter adapter;
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener mAuthListener;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference;
-    ArrayList<HashMap<String, String>> techCompanyList;
+    private List<techCompanyRecyclerItems> listItems;
 
     ListView lvw;
 
@@ -45,7 +49,7 @@ public class CompaniesTechFragment extends Fragment {
         FirebaseUser user = mAuth.getCurrentUser();
         databaseReference = database.getReference("Companies").child("Tech");
         lvw = (ListView)view.findViewById(R.id.tech_list);
-        techCompanyList = new ArrayList<>();
+        listItems = new ArrayList<>();
 
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
@@ -58,46 +62,10 @@ public class CompaniesTechFragment extends Fragment {
                     String url = ds.child("URL").getValue(String.class);
                     String wikiurl = ds.child("WikiURL").getValue(String.class);
 
-                    HashMap<String, String> techCompany = new HashMap<>();
-
-                    techCompany.put("Name",name);
-                    techCompany.put("CTC",ctc);
-                    techCompany.put("Role",role);
-                    techCompany.put("Type",type);
-                    techCompany.put("URL",url);
-                    techCompany.put("WikiURL",wikiurl);
-
-                    techCompanyList.add(techCompany);
-
+                    listItems.add(new techCompanyRecyclerItems(name,ctc,role,type,url,wikiurl));
                 }
-
-                ListAdapter adapter = new SimpleAdapter(getActivity(), techCompanyList,
-                        R.layout.tech_list, new String[]{"Name", "CTC", "Role","Type","URL","WikiURL"},
-                        new int[]{R.id.tech_name,R.id.tech_ctc,R.id.tech_role, R.id.tech_type,R.id.tech_url,R.id.tech_wiki});
-
-                lvw.setAdapter(adapter);
-
-                final TextView t1 = (TextView)getActivity().findViewById(R.id.tech_url);
-                t1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        String url = t1.getText().toString();
-                        Intent i = new Intent(Intent.ACTION_VIEW);
-                        i.setData(Uri.parse(url));
-                        startActivity(i);
-                    }
-                });
-
-                final TextView t2 = (TextView)getActivity().findViewById(R.id.tech_wiki);
-                t2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        String url = t2.getText().toString();
-                        Intent i = new Intent(Intent.ACTION_VIEW);
-                        i.setData(Uri.parse(url));
-                        startActivity(i);
-                    }
-                });
+                adapter = new techCompanyAdapter(listItems,getContext());
+                recyclerView.setAdapter(adapter);
             }
 
             @Override
