@@ -46,8 +46,8 @@ public class CompaniesTechFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_companies_tech, container, false);
-        recyclerView = getActivity().findViewById(R.id.tech_list_recycler);
-        recyclerView.setHasFixedSize(true);
+        recyclerView = (RecyclerView)view.findViewById(R.id.tech_list_recycler);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
