@@ -24,7 +24,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="15dp"
                 android:textSize="22dp"
-                android:id="@+id/tech_name"/>
+                android:id="@+id/nontech_name"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -42,8 +42,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="46dp"
-                    android:id="@+id/tech_ctc"
+                    android:layout_marginLeft="45dp"
+                    android:id="@+id/nontech_ctc"
                     android:text="ctc"/>
             </LinearLayout>
 
@@ -57,36 +57,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:text="Role "
+                    android:text="Type"
                     android:textSize="15dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="46dp"
-                    android:id="@+id/tech_role"
+                    android:layout_marginLeft="45dp"
+                    android:id="@+id/nontech_type"
                     android:text="role"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="27dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:text="Type "
-                    android:textSize="15dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="43dp"
-                    android:id="@+id/tech_type"
-                    android:text="type"/>
             </LinearLayout>
 
             <LinearLayout
@@ -107,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:autoLink="web"
                     android:layout_marginLeft="48dp"
-                    android:id="@+id/tech_url"
+                    android:id="@+id/nontech_url"
                     android:text="url"/>
             </LinearLayout>
 
@@ -127,9 +106,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="21dp"
                     android:autoLink="web"
-                    android:id="@+id/tech_wiki"
+                    android:id="@+id/nontech_wiki"
                     android:text="wiki"/>
             </LinearLayout>
 

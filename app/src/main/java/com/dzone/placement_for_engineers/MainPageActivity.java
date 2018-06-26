@@ -201,12 +201,12 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
     }
 
     public void companies_non_tech(View view) {
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CompaniesTechFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CompaniesNonTechFragment()).commit();
         findViewById(R.id.scrollview).setVisibility(View.GONE);
     }
 
     public void companies_core(View view) {
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CompaniesTechFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CompaniesCoreFragment()).commit();
         findViewById(R.id.scrollview).setVisibility(View.GONE);
     }
 

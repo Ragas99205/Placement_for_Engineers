@@ -30,4 +30,10 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
+    <style name="frag">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/d_Blue</item>
+        <item name="colorAccent">@color/transparent</item>
+    </style>
+
 </resources>
