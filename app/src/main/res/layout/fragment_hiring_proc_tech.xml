@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/l_Blue">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hiring Process Tech Fragment"
-        android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/product"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/curved_button"
+        android:padding="10dp"
+        android:text="Product&#10;Based"
+        android:textSize="20sp"
+        android:typeface="monospace"
+        android:textColor="@color/l_Blue"/>
+
+    <Button
+        android:id="@+id/service"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/product"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/curved_button"
+        android:padding="10dp"
+        android:text="Service&#10;Based"
+        android:textSize="20sp"
+        android:typeface="monospace"
+        android:textColor="@color/l_Blue"/>
+
 
 </RelativeLayout>

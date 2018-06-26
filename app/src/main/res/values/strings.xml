@@ -5,4 +5,59 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="service_desc">\tService based companies are those that work on already existing products to provide some service to a client.
+        If you want a simpler view, imagine service based companies as a restaurant where you go, order and then the food is prepared and served to you.
+        Service based software company is a company which builds software only when a customer approaches it and asks to author software for his needs.
+        </string>
+
+    <string name="aptitude_desc">\tAptitude tests are used by employers to measure your work-related cognitive capacity.
+        The most commonly used set of cognitive tests includes – abstract/conceptual reasoning, verbal reasoning and numerical reasoning.
+    </string>
+
+    <string name="tech_hr_desc">\tA technical interview typically features questions that are specific to the role you have applied for.
+        These might include brain teaser questions and/or numerical reasoning questions.\n
+        \tAn HR interview is conducted to judge your personality, your strengths, your weaknesses, your capability to handle the role, to check your background, and to understand if you\'re the right fit for this job.
+        That is why it is very important to be well-prepared for the HR interview, because an HR round can decide whether you continue with any further interview rounds.
+    </string>
+
+    <string name="product_desc">\tProduct based companies are those that create some products like Oracle or Adobe.
+        If you want a simpler view, imagine product based companies as an ice cream parlor, where you go and pick a flavor of ice cream which they have already made.
+        But, a product based company builds a software and sells it to a wide variety of customers (with or without customizations).
+        So, the software is practically built before a customer approaches the company.
+    </string>
+
+    <string name="tech_desc">\tThese vary from college to college. There are multiple rounds that involve coding questions based on Algorithms and Data Structures.
+        These are typically asked in all technical interviews in the IT industry. Some rounds also involve puzzles and designing questions.
+    </string>
+
+    <string name="hr_desc">\tAn HR interview is conducted to judge your personality, your strengths, your weaknesses, your capability to handle the role, to check your background, and to understand if you\'re the right fit for this job.
+        That is why it is very important to be well-prepared for the HR interview, because an HR round can decide whether you continue with any further interview rounds.</string>
+
+    <string name="non_tech_desc">\tA non-technical company is an organization to which selling or developing software internally does not constitute a core part of their business.
+        This type of organization obviously benefits greatly from using supporting software but at its bare bones, it could run without that if needed.
+        Some examples would be Content Writing, Administration and HR manager.</string>
+
+    <string name="test_desc">\tTests can be either online or paper based. Brush up on important fundamentals of your core education.
+        Knowledge of the company and the profile you are applying for is a must.
+    </string>
+
+    <string name="gd_desc">\tGDs typically feature on-going or general topics. This round is mainly to test your presentation, communication skill and knowledge of facts and figures.
+        Reading newspaper editorials will surely help you a lot in this round!
+    </string>
+
+    <string name="core_desc">\tCore companies are the ones that specialize in particular sectors and are highly valued for their level of expertise and professionalism in their respective areas of operation.
+        Examples of such companies include: BHEL, NTPC, Coal India, Reliance etc.
+        These companies offer jobs in core areas of engineering such as mechanical, electrical or infrastructure sector.
+    </string>
+
+    <string name="gate_desc">\tSome companies shortlist candidates through GATE, while others visit on campus.\n
+        \tMore than 30+ PSUs like IOCL, ONGC, BPCL, HPCL, NTPC, GAIL, HAL, BARC etc consider GATE score for recuitment.\n
+        \tAptitude tests are used by employers to measure your work-related cognitive capacity.
+        The most commonly used set of cognitive tests includes – abstract/conceptual reasoning, verbal reasoning and numerical reasoning.\n
+        \tTechnical tests depend on your education domain.
+    </string>
+
+    <string name="tech_core">\tQuestions asked in the technical interview depends on the type of company and the job profile you are appearing for.
+        During the interviews of telecom companies you must have command in subjects like Wireless and Mobile Communication and Digital Switching.</string>
 </resources>

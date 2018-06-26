@@ -19,6 +19,11 @@
         <item name="colorPrimaryDark">@color/l_Blue</item>
     </style>
 
+    <style name="HiringProcess" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/l_Blue</item>
+        <item name="colorPrimaryDark">@color/l_Blue</item>
+    </style>
+
     <!--Needed for navigation drawer-->
     <style name="MainTheme.NoActionBar">
         <item name="android:windowActionBar">false</item>
