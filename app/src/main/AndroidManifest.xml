@@ -35,8 +35,9 @@
         <activity
             android:name=".HiringProcServiceBased"
             android:label="Service Based Companies"
-            android:theme="@style/HiringProcess"
-            />
+            android:theme="@style/HiringProcess" />
+        <activity android:name=".AddInternshipExp" />
+        <activity android:name=".AddJobExp"></activity>
     </application>
 
 </manifest>

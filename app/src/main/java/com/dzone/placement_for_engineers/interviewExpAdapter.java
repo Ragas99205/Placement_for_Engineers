@@ -13,10 +13,10 @@ import java.util.List;
 public class interviewExpAdapter extends RecyclerView.Adapter<interviewExpAdapter.ViewHolder>
 {
 
-    private List<interviewExpRecyclerItems> listItems;
+    private List<internshipExpRecyclerItems> listItems;
     private Context mContext;
 
-    public interviewExpAdapter(List<interviewExpRecyclerItems> listItems, Context mContext) {
+    public interviewExpAdapter(List<internshipExpRecyclerItems> listItems, Context mContext) {
         this.listItems = listItems;
         this.mContext = mContext;
     }
@@ -30,7 +30,7 @@ public class interviewExpAdapter extends RecyclerView.Adapter<interviewExpAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final interviewExpRecyclerItems item = listItems.get(position);
+        final internshipExpRecyclerItems item = listItems.get(position);
         holder.name.setText(item.getName());
         holder.title.setText(item.getTitle());
         holder.desc.setText(item.getDesc());

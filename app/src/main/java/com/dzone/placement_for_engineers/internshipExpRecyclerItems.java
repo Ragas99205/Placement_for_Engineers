@@ -1,6 +1,6 @@
 package com.dzone.placement_for_engineers;
 
-public class interviewExpRecyclerItems {
+public class internshipExpRecyclerItems {
     private String name;
     private String title;
     private String desc;
@@ -29,7 +29,7 @@ public class interviewExpRecyclerItems {
         this.desc = desc;
     }
 
-    public interviewExpRecyclerItems(String name, String title, String desc) {
+    public internshipExpRecyclerItems(String name, String title, String desc) {
         this.name = name;
         this.title = title;
         this.desc = desc;
