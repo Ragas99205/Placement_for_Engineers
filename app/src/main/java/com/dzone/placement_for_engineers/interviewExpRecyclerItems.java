@@ -10,7 +10,7 @@ public class interviewExpRecyclerItems {
     }
 
     public void setName(String name) {
-        name = name;
+        this.name = name;
     }
 
     public String getTitle() {
@@ -30,7 +30,7 @@ public class interviewExpRecyclerItems {
     }
 
     public interviewExpRecyclerItems(String name, String title, String desc) {
-        name = name;
+        this.name = name;
         this.title = title;
         this.desc = desc;
     }
