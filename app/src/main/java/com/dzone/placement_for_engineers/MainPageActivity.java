@@ -100,7 +100,6 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
             }catch(Exception e){
                 Toast.makeText(MainPageActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
             }
-
         }
 
 
