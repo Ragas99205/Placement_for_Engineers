@@ -21,14 +21,15 @@ public class PlacementConEduFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-
-        t6=(TextView)getActivity().findViewById(R.id.tv6);
-        t12=(TextView)getActivity().findViewById(R.id.tv12);
-        t18=(TextView)getActivity().findViewById(R.id.tv18);
-        t24=(TextView)getActivity().findViewById(R.id.tv24);
-        t30=(TextView)getActivity().findViewById(R.id.tv30);
-        t36=(TextView)getActivity().findViewById(R.id.tv36);
-        t42=(TextView)getActivity().findViewById(R.id.tv42);
+        View v = inflater.inflate(R.layout.fragment_placement_con_edu, container, false);
+        
+        t6=(TextView)v.findViewById(R.id.tv6);
+        t12=(TextView)v.findViewById(R.id.tv12);
+        t18=(TextView)v.findViewById(R.id.tv18);
+        t24=(TextView)v.findViewById(R.id.tv24);
+        t30=(TextView)v.findViewById(R.id.tv30);
+        t36=(TextView)v.findViewById(R.id.tv36);
+        t42=(TextView)v.findViewById(R.id.tv42);
 
 
         t6.setOnClickListener(new View.OnClickListener() {
@@ -87,7 +88,7 @@ public class PlacementConEduFragment extends Fragment {
                 startActivity(i8);
             }
         });
-        return inflater.inflate(R.layout.fragment_placement_con_edu, container, false);
+        return v;
 
     }
 
