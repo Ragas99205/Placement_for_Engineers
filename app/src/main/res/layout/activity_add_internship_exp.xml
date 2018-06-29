@@ -67,10 +67,15 @@
 
         <EditText
             android:id="@+id/add_intern_desc"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/multiline_bordered_input"
+            android:gravity="top"
             android:ems="10"
             android:inputType="textMultiLine"
             android:lines="12" />
