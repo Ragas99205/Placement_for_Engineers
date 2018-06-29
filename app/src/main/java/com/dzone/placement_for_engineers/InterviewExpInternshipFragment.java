@@ -1,5 +1,6 @@
 package com.dzone.placement_for_engineers;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -41,7 +42,7 @@ public class InterviewExpInternshipFragment extends Fragment {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(getActivity(),AddInternshipExp.class));
             }
         });
 
@@ -58,8 +59,6 @@ public class InterviewExpInternshipFragment extends Fragment {
                     String name = ds.child("Name").getValue(String.class);
                     String title = ds.child("Title").getValue(String.class);
                     String desc = ds.child("Description").getValue(String.class);
-
-
 
                     listItems.add(new internshipExpRecyclerItems(name,title,desc));
                 }
