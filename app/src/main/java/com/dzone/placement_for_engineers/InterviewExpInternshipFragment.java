@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,7 +29,6 @@ public class InterviewExpInternshipFragment extends Fragment {
     private FloatingActionButton add;
     private interviewExpAdapter adapter;
     FirebaseAuth mAuth;
-    FirebaseAuth.AuthStateListener mAuthListener;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference;
     private List<internshipExpRecyclerItems> listItems;
@@ -46,6 +46,10 @@ public class InterviewExpInternshipFragment extends Fragment {
             }
         });
 
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         //insert your code here
         listItems = new ArrayList<>();
@@ -55,13 +59,17 @@ public class InterviewExpInternshipFragment extends Fragment {
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot ds : dataSnapshot.getChildren()){
-                    String name = ds.child("Name").getValue(String.class);
-                    String title = ds.child("Title").getValue(String.class);
-                    String desc = ds.child("Description").getValue(String.class);
+                for (DataSnapshot ds : dataSnapshot.getChildren()){
+                    for(DataSnapshot dp : ds.getChildren()){
+                        String name = dp.child("Name").getValue(String.class);
+                        String title = dp.child("Title").getValue(String.class);
+                        String desc = dp.child("Description").getValue(String.class);
 
-                    listItems.add(new internshipExpRecyclerItems(name,title,desc));
+                        listItems.add(new internshipExpRecyclerItems(name,title,desc));
+                    }
                 }
+
+
                 adapter = new interviewExpAdapter(listItems,getContext());
                 recyclerView.setAdapter(adapter);
             }
