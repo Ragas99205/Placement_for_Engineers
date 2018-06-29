@@ -32,7 +32,6 @@
                 android:id="@+id/tv1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/service_desc"
                 android:layout_marginTop="10dp"
                 android:text="There are mainly 2-3 rounds for these companies" />
 
@@ -40,7 +39,6 @@
                 android:id="@+id/tv2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv1"
                 android:layout_marginTop="10dp"
                 android:text="1. Aptitude Round"
                 android:textStyle="bold" />
@@ -49,14 +47,12 @@
                 android:id="@+id/aptidesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv2"
                 android:text="@string/aptitude_desc" />
 
             <TextView
                 android:id="@+id/tv3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/aptidesc"
                 android:layout_marginTop="10dp"
                 android:text="2. Tech + HR Round"
                 android:textStyle="bold" />
@@ -67,6 +63,19 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv3"
                 android:text="@string/tech_hr_desc" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="CGPA Requirements:"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:text="@string/tech_criteria" />
 
         </LinearLayout>
 

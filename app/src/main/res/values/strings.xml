@@ -59,5 +59,11 @@
     </string>
 
     <string name="tech_core">\tQuestions asked in the technical interview depends on the type of company and the job profile you are appearing for.
-        During the interviews of telecom companies you must have command in subjects like Wireless and Mobile Communication and Digital Switching.</string>
+        During the interviews of telecom companies you must have command in subjects like Wireless and Mobile Communication and Digital Switching.
+    </string>
+
+    <string name="tech_criteria">\tThere is no set minimum CGPA requirement for placements. Each company has it\'s own criteria.\n
+        However, it is worth mentioning that dream and regular companies ask for a minimum CGPA of 6.5–7.5. Super dream companies ask for a minimum of 8-9 (Approximate figures).\n
+        Also, the candidate should not have any backlogs.
+    </string>
 </resources>
