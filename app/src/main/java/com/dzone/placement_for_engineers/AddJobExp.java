@@ -31,7 +31,7 @@ public class AddJobExp extends AppCompatActivity {
             }
         });
 
-        submit = (Button)findViewById(R.id.submit_intern_exp);
+        submit = (Button)findViewById(R.id.submit_job_exp);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
