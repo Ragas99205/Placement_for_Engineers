@@ -49,9 +49,9 @@ public class jobExpAdapter extends RecyclerView.Adapter<jobExpAdapter.ViewHolder
 
         public ViewHolder(View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.intern_name);
-            title = itemView.findViewById(R.id.intern_title);
-            desc = itemView.findViewById(R.id.intern_desc);
+            name = itemView.findViewById(R.id.job_name);
+            title = itemView.findViewById(R.id.job_title);
+            desc = itemView.findViewById(R.id.job_desc);
         }
     }
 }
