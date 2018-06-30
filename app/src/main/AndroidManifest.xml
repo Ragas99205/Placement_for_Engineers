@@ -29,7 +29,8 @@
             android:name=".MainPageActivity"
             android:label="Placement for Engineers"
             android:theme="@style/MainTheme.NoActionBar" />
-        <activity android:name=".ForgotPassActivity" />
+        <activity android:name=".ForgotPassActivity"
+            android:theme="@style/SplashTheme"/>
         <activity
             android:name=".HiringProcProductBased"
             android:label="Product Based Companies"
