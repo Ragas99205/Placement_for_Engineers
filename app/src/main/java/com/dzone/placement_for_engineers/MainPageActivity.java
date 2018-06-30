@@ -177,6 +177,15 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
                 Toast.makeText(MainPageActivity.this,"Successfully Logged Out",Toast.LENGTH_SHORT).show();
                 findViewById(R.id.scrollview).setVisibility(View.GONE);
                 break;
+
+            case R.id.share:
+                Intent share = new Intent(Intent.ACTION_SEND);
+                share.setType("text/plain");
+                String subject = "Download Placement for Engineers app";
+                String message = "Playstore link"; // replace with playstore link
+                share.putExtra(Intent.EXTRA_SUBJECT, subject);
+                share.putExtra(Intent.EXTRA_TEXT, message);
+                startActivity(Intent.createChooser(share, "Share via"));
         }
 
         drawer.closeDrawer(GravityCompat.START);
