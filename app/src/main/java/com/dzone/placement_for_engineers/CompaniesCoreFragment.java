@@ -9,8 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
@@ -36,6 +38,8 @@ public class CompaniesCoreFragment extends Fragment {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference;
     private List<coreCompanyRecyclerItems> listItems;
+    private ProgressBar spinner;
+    private LinearLayout pb;
 
     ListView lvw;
 
@@ -44,6 +48,11 @@ public class CompaniesCoreFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_companies_core, container, false);
+
+        pb = (LinearLayout)view.findViewById(R.id.linlaHeaderProgress);
+        pb.setVisibility(View.VISIBLE);
+        spinner=(ProgressBar)view.findViewById(R.id.progressBar);
+        spinner.setVisibility(View.VISIBLE);
         recyclerView = (RecyclerView)view.findViewById(R.id.core_list_recycler);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -66,6 +75,8 @@ public class CompaniesCoreFragment extends Fragment {
                 }
                 adapter = new coreCompanyAdapter(listItems,getContext());
                 recyclerView.setAdapter(adapter);
+                spinner.setVisibility(View.GONE);
+                pb.setVisibility(View.GONE);
             }
 
             @Override
