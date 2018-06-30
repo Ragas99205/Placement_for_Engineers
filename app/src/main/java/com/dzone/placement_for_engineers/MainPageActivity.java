@@ -34,24 +34,24 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference databaseName;
     CompaniesTechFragment ctf = (CompaniesTechFragment)getSupportFragmentManager().findFragmentByTag("Companies_Tech");
-    private static final int TIME_INTERVAL = 2000; // # milliseconds, desired time passed between two back presses.
-    private long mBackPressed;
-
-    @Override
-    public void onBackPressed()
-    {
-        if (mBackPressed + TIME_INTERVAL > System.currentTimeMillis())
-        {
-            super.onBackPressed();
-            Intent homeIntent = new Intent(Intent.ACTION_MAIN);
-            homeIntent.addCategory( Intent.CATEGORY_HOME );
-            homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(homeIntent);
-        }
-        else { Toast.makeText(getBaseContext(), "Tap back button in order to exit", Toast.LENGTH_SHORT).show(); }
-
-        mBackPressed = System.currentTimeMillis();
-    }
+//    private static final int TIME_INTERVAL = 2000; // # milliseconds, desired time passed between two back presses.
+//    private long mBackPressed;
+//
+//    @Override
+//    public void onBackPressed()
+//    {
+//        if (mBackPressed + TIME_INTERVAL > System.currentTimeMillis())
+//        {
+//            super.onBackPressed();
+//            Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+//            homeIntent.addCategory( Intent.CATEGORY_HOME );
+//            homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//            startActivity(homeIntent);
+//        }
+//        else { Toast.makeText(getBaseContext(), "Tap back button in order to exit", Toast.LENGTH_SHORT).show(); }
+//
+//        mBackPressed = System.currentTimeMillis();
+//    }
 
     @Override
     protected void onStart() {
