@@ -12,8 +12,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,12 +40,19 @@ public class CompaniesTechFragment extends Fragment {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference;
     private List<techCompanyRecyclerItems> listItems;
+    private ProgressBar spinner;
+    private LinearLayout pb;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_companies_tech, container, false);
+
+        pb = (LinearLayout)view.findViewById(R.id.linlaHeaderProgress);
+        pb.setVisibility(View.VISIBLE);
+        spinner=(ProgressBar)view.findViewById(R.id.progressBar);
+        spinner.setVisibility(View.VISIBLE);
         recyclerView = (RecyclerView)view.findViewById(R.id.tech_list_recycler);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -67,6 +76,8 @@ public class CompaniesTechFragment extends Fragment {
                 }
                 adapter = new techCompanyAdapter(listItems,getContext());
                 recyclerView.setAdapter(adapter);
+                spinner.setVisibility(View.GONE);
+                pb.setVisibility(View.GONE);
             }
 
             @Override

@@ -11,6 +11,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -32,11 +34,17 @@ public class InterviewExpInternshipFragment extends Fragment {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference;
     private List<internshipExpRecyclerItems> listItems;
-
+    private ProgressBar spinner;
+    private LinearLayout pb;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_interview_exp_internship, container, false);
+        pb = (LinearLayout)view.findViewById(R.id.linlaHeaderProgress);
+        pb.setVisibility(View.VISIBLE);
+        spinner=(ProgressBar)view.findViewById(R.id.progressBar);
+        spinner.setVisibility(View.VISIBLE);
+
         recyclerView = (RecyclerView)view.findViewById(R.id.internship_exp_recycler);
         add = (FloatingActionButton)view.findViewById(R.id.add_intern);
         add.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +80,8 @@ public class InterviewExpInternshipFragment extends Fragment {
 
                 adapter = new interviewExpAdapter(listItems,getContext());
                 recyclerView.setAdapter(adapter);
+                spinner.setVisibility(View.GONE);
+                pb.setVisibility(View.GONE);
             }
 
             @Override
