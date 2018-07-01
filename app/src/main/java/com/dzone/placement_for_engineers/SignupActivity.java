@@ -84,10 +84,12 @@ public class SignupActivity extends AppCompatActivity {
 
                 if(TextUtils.isEmpty(nametxt)){
                     Toast.makeText(SignupActivity.this,"Name can't be empty",Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
                 if(TextUtils.isEmpty(contacttxt)){
                     Toast.makeText(SignupActivity.this,"Contact No. can't be empty",Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
                 //create user
