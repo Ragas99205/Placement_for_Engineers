@@ -7,84 +7,69 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PlacementConHRFragment extends Fragment {
-    TextView t6,t12,t18,t24,t30,t36,t42;
+    private RecyclerView recyclerView;
+    private PlacementConAdapter adapter;
+    private List<PlacementConRecyclerItems> listItems;
+
+    String name[] = {"Meera Enterprises",
+            "Jurist Zone",
+            "Excelindia HR Services",
+            "Klaxon India",
+            "Nidhi Maritime Consultancy",
+            "Shrever Groups",
+            "Exito Hr Solution Pvt Ltd."};
+
+    String address[] = {"Bengaluru",
+            "Laxmi Nagar, Delhi",
+            "Bengaluru",
+            "Brigade Road, Bengaluru",
+            "Delhi",
+            "Uttamnagar, West Delhi",
+            "Dwarka,West Delhi"};
+
+    String locality[] = {"Bengaluru, Mumbai, Thane, Chennai",
+            "Hyderabad, Bengaluru ,Pune,Delhi",
+            "Surat, Gurugram, Bengaluru, Chennai",
+            "Bengaluru",
+            "Delhi/NCR, Delhi",
+            "Delhi",
+            "Delhi, Chennai, Mumbai, Bengaluru"};
+
+    String url[] = {"http://www.meerajobs.in",
+            "http://www.juristzone.com",
+            "http://www.excelindiahrservices.com",
+            "http://www.klaxonindia.com",
+            "http://www.nidhimaritime.in",
+            "http://www.shrever.com",
+            "http://www.exitohrs.com"};
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_placement_con_hr, container, false);
 
-        t6=(TextView)v.findViewById(R.id.tv6);
-        t12=(TextView)v.findViewById(R.id.tv12);
-        t18=(TextView)v.findViewById(R.id.tv18);
-        t24=(TextView)v.findViewById(R.id.tv24);
-        t30=(TextView)v.findViewById(R.id.tv30);
-        t36=(TextView)v.findViewById(R.id.tv36);
-        t42=(TextView)v.findViewById(R.id.tv42);
+        recyclerView = (RecyclerView)v.findViewById(R.id.plac_con_hr_recycler);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        listItems = new ArrayList<>();
 
-
-        t6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse("http://www.meerajobs.in"); // missing 'http://' will cause crashed
-                Intent i3 = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(i3);
-            }
-        });
-        t12.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse("http://www.juristzone.com/"); // missing 'http://' will cause crashed
-                Intent i4 = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(i4);
-            }
-        });
-        t18.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse("http://www.excelindiahrservices.com"); // missing 'http://' will cause crashed  // 24th linr
-                Intent i5 = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(i5);
-            }
-        });
-        t24.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse("http://www.klaxonindia.com"); // missing 'http://' will cause crashed
-                Intent i6 = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(i6);
-            }
-        });
-        t30.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse("http://www.nidhimaritime.in"); // missing 'http://' will cause crashed
-                Intent i7 = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(i7);
-            }
-        });
-        t36.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse("http://www.shrever.com"); // missing 'http://' will cause crashed
-                Intent i8 = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(i8);
-            }
-        });
-        t42.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse("http://www.exitohrs.com"); // missing 'http://' will cause crashed
-                Intent i8 = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(i8);
-            }
-        });
+        for(int i=0;i<name.length;i++)
+        {
+            listItems.add(new PlacementConRecyclerItems(name[i],address[i],locality[i],url[i]));
+        }
+        adapter = new PlacementConAdapter(listItems,getContext());
+        recyclerView.setAdapter(adapter);
 
         return v;
     }
