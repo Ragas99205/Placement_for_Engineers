@@ -27,6 +27,7 @@
             android:theme="@style/SplashTheme"/>
         <activity
             android:name=".MainPageActivity"
+            android:noHistory="true"
             android:label="Placement for Engineers"
             android:theme="@style/MainTheme.NoActionBar" />
         <activity android:name=".ForgotPassActivity"
