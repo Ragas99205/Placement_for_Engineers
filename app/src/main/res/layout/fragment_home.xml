@@ -59,6 +59,7 @@
                                 android:layout_height="wrap_content"
                                 android:clickable="true"
                                 android:drawableLeft="@drawable/ic_label"
+
                                 android:drawablePadding="5dp"
                                 android:text="Tech"
                                 android:onClick="companies_tech"
