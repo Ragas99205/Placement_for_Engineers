@@ -53,42 +53,76 @@
                             android:orientation="vertical"
                             android:padding="10dp">
 
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_tech"/>
+
+                                <TextView
+                                    android:id="@+id/companies_tech"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:clickable="true"
+                                    android:drawablePadding="5dp"
+                                    android:text="Tech"
+                                    android:onClick="companies_tech"
+                                    android:textColor="@color/l_Blue"
+                                    android:textSize="18dp" />
+
+                            </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_non_tech"/>
+
                             <TextView
-                                android:id="@+id/companies_tech"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
                                 android:clickable="true"
-                                android:drawableLeft="@drawable/ic_label"
-
-                                android:drawablePadding="5dp"
-                                android:text="Tech"
-                                android:onClick="companies_tech"
-                                android:textColor="@color/l_Blue"
-                                android:textSize="18dp" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:clickable="true"
-                                android:drawableLeft="@drawable/ic_label"
                                 android:drawablePadding="5dp"
                                 android:onClick="companies_non_tech"
                                 android:text="Non Tech"
                                 android:textColor="@color/l_Blue"
                                 android:textSize="18dp" />
 
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_core"/>
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="10dp"
                                 android:clickable="true"
-                                android:drawableLeft="@drawable/ic_label"
                                 android:drawablePadding="5dp"
                                 android:onClick="companies_core"
                                 android:text="Core"
                                 android:textColor="@color/l_Blue"
                                 android:textSize="18dp" />
+                        </LinearLayout>
 
                         </LinearLayout>
                     </RelativeLayout>
