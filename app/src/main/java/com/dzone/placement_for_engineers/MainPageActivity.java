@@ -91,6 +91,7 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
         View header = navigationView.getHeaderView(0);
 
 
+
         final TextView nav_name = (TextView)header.findViewById(R.id.nav_name);
         TextView nav_email = (TextView)header.findViewById(R.id.nav_email);
         nav_email.setText(user.getEmail());
@@ -120,80 +121,84 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
             }
         }
 
-
-
-
-
+        if(savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+            navigationView.setCheckedItem(R.id.home_page);
+        }
 
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.companies_tech:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CompaniesTechFragment(), "Companies_Tech").commit();
-                findViewById(R.id.scrollview).setVisibility(View.GONE);
-                break;
+//            case R.id.companies_tech:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CompaniesTechFragment(), "Companies_Tech").commit();
+//                findViewById(R.id.scrollview).setVisibility(View.GONE);
+//                break;
+//
+//            case R.id.companies_nontech:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CompaniesNonTechFragment()).commit();
+//                findViewById(R.id.scrollview).setVisibility(View.GONE);
+//                break;
+//
+//            case R.id.companies_core:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CompaniesCoreFragment()).commit();
+//                findViewById(R.id.scrollview).setVisibility(View.GONE);
+//                break;
+//
+//            case R.id.interview_exp_internship:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InterviewExpInternshipFragment()).commit();
+//                findViewById(R.id.scrollview).setVisibility(View.GONE);
+//                break;
+//
+//            case R.id.interview_exp_job:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InterviewExpJobFragment()).commit();
+//                findViewById(R.id.scrollview).setVisibility(View.GONE);
+//                break;
+//
+//            case R.id.hiring_process_tech:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HiringProcTechFragment()).commit();
+//                findViewById(R.id.scrollview).setVisibility(View.GONE);
+//                break;
+//
+//            case R.id.hiring_process_nontech:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HiringProcNonTechFragment()).commit();
+//                findViewById(R.id.scrollview).setVisibility(View.GONE);
+//                break;
+//
+//            case R.id.hiring_process_core:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HiringProcCoreFragment()).commit();
+//                findViewById(R.id.scrollview).setVisibility(View.GONE);
+//                break;
+//
+//            case R.id.placement_consultant_hr:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PlacementConHRFragment()).commit();
+//                findViewById(R.id.scrollview).setVisibility(View.GONE);
+//                break;
+//
+//            case R.id.placement_consultant_rec:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PlacementConRecAgencyFragment()).commit();
+//                findViewById(R.id.scrollview).setVisibility(View.GONE);
+//                break;
+//
+//            case R.id.placement_consultant_overseas:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PlacementConOverseasFragment()).commit();
+//                findViewById(R.id.scrollview).setVisibility(View.GONE);
+//                break;
+//
+//            case R.id.placement_consultant_edu:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PlacementConEduFragment()).commit();
+//                findViewById(R.id.scrollview).setVisibility(View.GONE);
+//                break;
 
-            case R.id.companies_nontech:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CompaniesNonTechFragment()).commit();
-                findViewById(R.id.scrollview).setVisibility(View.GONE);
-                break;
-
-            case R.id.companies_core:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CompaniesCoreFragment()).commit();
-                findViewById(R.id.scrollview).setVisibility(View.GONE);
-                break;
-
-            case R.id.interview_exp_internship:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InterviewExpInternshipFragment()).commit();
-                findViewById(R.id.scrollview).setVisibility(View.GONE);
-                break;
-
-            case R.id.interview_exp_job:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InterviewExpJobFragment()).commit();
-                findViewById(R.id.scrollview).setVisibility(View.GONE);
-                break;
-
-            case R.id.hiring_process_tech:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HiringProcTechFragment()).commit();
-                findViewById(R.id.scrollview).setVisibility(View.GONE);
-                break;
-
-            case R.id.hiring_process_nontech:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HiringProcNonTechFragment()).commit();
-                findViewById(R.id.scrollview).setVisibility(View.GONE);
-                break;
-
-            case R.id.hiring_process_core:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HiringProcCoreFragment()).commit();
-                findViewById(R.id.scrollview).setVisibility(View.GONE);
-                break;
-
-            case R.id.placement_consultant_hr:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PlacementConHRFragment()).commit();
-                findViewById(R.id.scrollview).setVisibility(View.GONE);
-                break;
-
-            case R.id.placement_consultant_rec:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PlacementConRecAgencyFragment()).commit();
-                findViewById(R.id.scrollview).setVisibility(View.GONE);
-                break;
-
-            case R.id.placement_consultant_overseas:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PlacementConOverseasFragment()).commit();
-                findViewById(R.id.scrollview).setVisibility(View.GONE);
-                break;
-
-            case R.id.placement_consultant_edu:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PlacementConEduFragment()).commit();
-                findViewById(R.id.scrollview).setVisibility(View.GONE);
+            case R.id.home_page:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
                 break;
 
             case R.id.logout:
                 mAuth.signOut();
                 Toast.makeText(MainPageActivity.this,"Successfully Logged Out",Toast.LENGTH_SHORT).show();
-                findViewById(R.id.scrollview).setVisibility(View.GONE);
+//                findViewById(R.id.scrollview).setVisibility(View.GONE);
                 break;
 
             case R.id.share:
@@ -204,6 +209,10 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
                 share.putExtra(Intent.EXTRA_SUBJECT, subject);
                 share.putExtra(Intent.EXTRA_TEXT, message);
                 startActivity(Intent.createChooser(share, "Share via"));
+
+            case R.id.exit:
+                moveTaskToBack(true);
+                break;
         }
 
         drawer.closeDrawer(GravityCompat.START);
@@ -216,73 +225,60 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
 //            drawer.closeDrawer(GravityCompat.START);
 //        }
 //        else {
-//            findViewById(R.id.scrollview).setVisibility(View.VISIBLE);
+//            super.onBackPressed();
+//            finish();
 //        }
 //
 //    }
 
     public void companies_tech(View view) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CompaniesTechFragment()).commit();
-        findViewById(R.id.scrollview).setVisibility(View.GONE);
     }
 
     public void companies_non_tech(View view) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CompaniesNonTechFragment()).commit();
-        findViewById(R.id.scrollview).setVisibility(View.GONE);
     }
 
     public void companies_core(View view) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CompaniesCoreFragment()).commit();
-        findViewById(R.id.scrollview).setVisibility(View.GONE);
     }
 
     public void interview_exp_internship(View view) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InterviewExpInternshipFragment()).commit();
-        findViewById(R.id.scrollview).setVisibility(View.GONE);
     }
 
     public void interview_exp_job(View view) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InterviewExpJobFragment()).commit();
-        findViewById(R.id.scrollview).setVisibility(View.GONE);
     }
 
     public void hiring_proc_tech(View view) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HiringProcTechFragment()).commit();
-        findViewById(R.id.scrollview).setVisibility(View.GONE);
     }
 
     public void hiring_proc_non_tech(View view) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HiringProcNonTechFragment()).commit();
-        findViewById(R.id.scrollview).setVisibility(View.GONE);
     }
 
     public void hiring_proc_core(View view) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HiringProcCoreFragment()).commit();
-        findViewById(R.id.scrollview).setVisibility(View.GONE);
     }
 
     public void placement_con_hr(View view) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PlacementConHRFragment()).commit();
-        findViewById(R.id.scrollview).setVisibility(View.GONE);
     }
 
     public void placement_con_rec_agency(View view) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PlacementConRecAgencyFragment()).commit();
-        findViewById(R.id.scrollview).setVisibility(View.GONE);
     }
 
     public void placement_con_overseas(View view) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PlacementConOverseasFragment()).commit();
-        findViewById(R.id.scrollview).setVisibility(View.GONE);
     }
 
     public void placement_con_edu_con(View view) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PlacementConEduFragment()).commit();
-        findViewById(R.id.scrollview).setVisibility(View.GONE);
     }
 
-    //Add playstore link
-    public void share(View view) {
-    }
+
 }
 
