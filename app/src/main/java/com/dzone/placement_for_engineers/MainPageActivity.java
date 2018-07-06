@@ -195,6 +195,10 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
                 break;
 
+            case R.id.about_us:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AboutUsFragment()).commit();
+                break;
+
             case R.id.logout:
                 mAuth.signOut();
                 Toast.makeText(MainPageActivity.this,"Successfully Logged Out",Toast.LENGTH_SHORT).show();
