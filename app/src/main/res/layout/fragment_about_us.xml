@@ -34,9 +34,7 @@
                 android:layout_height="130dp"
                 android:src="@drawable/mem1"
                 android:padding="5dp"
-                app:civ_shadow="true"
-                app:civ_shadow_radius="10"
-                app:civ_shadow_color="#8BC34A"/>
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -65,9 +63,7 @@
                 android:layout_height="130dp"
                 android:src="@drawable/mem2"
                 android:padding="5dp"
-                app:civ_shadow="true"
-                app:civ_shadow_radius="10"
-                app:civ_shadow_color="#8BC34A"/>
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -103,9 +99,7 @@
                 android:layout_height="130dp"
                 android:src="@drawable/mem3"
                 android:padding="5dp"
-                app:civ_shadow="true"
-                app:civ_shadow_radius="10"
-                app:civ_shadow_color="#8BC34A"/>
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -134,9 +128,7 @@
                 android:layout_height="130dp"
                 android:src="@drawable/mem4"
                 android:padding="5dp"
-                app:civ_shadow="true"
-                app:civ_shadow_radius="10"
-                app:civ_shadow_color="#8BC34A"/>
+               />
 
             <TextView
                 android:layout_width="wrap_content"
