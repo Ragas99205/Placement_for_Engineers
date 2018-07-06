@@ -213,6 +213,7 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
                 share.putExtra(Intent.EXTRA_SUBJECT, subject);
                 share.putExtra(Intent.EXTRA_TEXT, message);
                 startActivity(Intent.createChooser(share, "Share via"));
+                break;
 
             case R.id.exit:
                 moveTaskToBack(true);
