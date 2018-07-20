@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "515615007374",
-    "firebase_url": "https://placementforengineers-68cad.firebaseio.com",
-    "project_id": "placementforengineers-68cad",
-    "storage_bucket": "placementforengineers-68cad.appspot.com"
+    "project_number": "903656884713",
+    "firebase_url": "https://placementforengineers-91999.firebaseio.com",
+    "project_id": "placementforengineers-91999",
+    "storage_bucket": "placementforengineers-91999.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:515615007374:android:6d62ad599431ffc7",
+        "mobilesdk_app_id": "1:903656884713:android:6d62ad599431ffc7",
         "android_client_info": {
           "package_name": "com.dzone.placement_for_engineers"
         }
       },
       "oauth_client": [
         {
-          "client_id": "515615007374-afo8rc4kptugivmoli0eqo9g888ijuar.apps.googleusercontent.com",
+          "client_id": "903656884713-9lbai21606sshvl8miqfm3qgcgn8a6q2.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.dzone.placement_for_engineers",
@@ -23,17 +23,13 @@
           }
         },
         {
-          "client_id": "515615007374-o5dpk56uinhc9a2fp8h9037g297gf8q3.apps.googleusercontent.com",
-          "client_type": 3
-        },
-        {
-          "client_id": "515615007374-o5dpk56uinhc9a2fp8h9037g297gf8q3.apps.googleusercontent.com",
+          "client_id": "903656884713-s7knh928vg83eu60v9vgn38a821s8u28.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCxghvSvfZJLrzSp1-O5nqWmZLZjd_2FeY"
+          "current_key": "AIzaSyAyWT5NIP9WzPSij3IHl3xByymzmw1cnsc"
         }
       ],
       "services": {
@@ -44,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "515615007374-o5dpk56uinhc9a2fp8h9037g297gf8q3.apps.googleusercontent.com",
+              "client_id": "903656884713-s7knh928vg83eu60v9vgn38a821s8u28.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
