@@ -209,7 +209,7 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
                 Intent share = new Intent(Intent.ACTION_SEND);
                 share.setType("text/plain");
                 String subject = "Download Placement for Engineers app";
-                String message = "Playstore link"; // replace with playstore link
+                String message = "https://play.google.com/store/apps/details?id=com.tdz.placement.engineers"; // replace with playstore link
                 share.putExtra(Intent.EXTRA_SUBJECT, subject);
                 share.putExtra(Intent.EXTRA_TEXT, message);
                 startActivity(Intent.createChooser(share, "Share via"));
